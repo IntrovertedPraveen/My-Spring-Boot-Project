@@ -1,0 +1,52 @@
+body{
+    background-image: url(background.jpg);
+    background-attachment: fixed;
+    background-position: 100%;
+}
+
+h1{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+.card{
+    width: 50%;
+}
+
+.name{
+    margin: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+input{
+    width: 500px;
+    border-radius: 10px;
+}
+
+.email{
+    margin: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.course-name{
+    margin: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+#SubBtn{
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 20px;
+    margin-left: 325px;
+    background-color: rgb(169, 58, 73);
+    color: aliceblue;
+    font-weight: bold;
+}
