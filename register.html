@@ -10,7 +10,7 @@
 <body>
     <h1>Register Course</h1>
     <div class="container card w-50">
-        <form action="http://localhost:8080/courses/register" method="post">
+        <form action="http://localhost:8080/courses/register" id="registerForm" method="post">
             <div class="name">
                 <label for="Name" class="form-label">Name</label>
             <input type="text" class="form-control" name="name" placeholder="Enter your Name">
@@ -33,5 +33,37 @@
             <button id="SubBtn" type="submit">Register</button>
         </form>
     </div>
+
+    <script>
+document.getElementById('registerForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const name = form.name.value;
+    const emailId = form.emailId.value;
+    const courseName = form.courseName.value;
+
+    const params = new URLSearchParams();
+    params.append("name", name);
+    params.append("emailId", emailId);
+    params.append("courseName", courseName);
+
+    try {
+        const response = await fetch("https://your-backend-url.com/courses/register", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: params
+        });
+
+        const result = await response.text();
+        alert(result); // or update DOM with the response
+    } catch (err) {
+        console.error("Error:", err);
+        alert("Something went wrong. Please try again.");
+    }
+});
+</script>
 </body>
 </html>
